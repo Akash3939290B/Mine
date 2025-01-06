@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+      h1 {
+        color: white;
+        font-weight: bolder;
+      }
+      fieldset {
+        border: 2px solid #f4f4f4;
+        border-radius: 1px;
+      }
+      legend {
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+        filter: drop-shadow(0 0 0.75rem black);
+      }
+      .container {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="text"]:focus {
+        outline: 1px solid #d8c6f3;
+      }
+      input[type="password"]:focus {
+        outline: 1px solid #d8c6f3;
+      }
+      input[type="submit"] {
+        width: 90%;
+        padding: 10px;
+        background-color: #d0b2fe;
+        font-weight: bold;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .message {
+        color: red;
+        margin-top: 20px;
+      }
+      .BackgroundImage {
+        background-image: url(./AkashImg/loginPageBg.webp);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100% 100%;
+      }
+      @media only screen and (max-width: 350px) {
+        .BackgroundImage {
+          background-repeat: repeat;
+          background-position: top;
+          background-size: contain;
+        }
+      }
+    </style>
+    <script>
+      function validateInput() {
+        const predefinedUsername = "Jeeva";
+        const predefinedPassword = "13102007";
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (
+          username === predefinedUsername &&
+          password === predefinedPassword
+        ) {
+          window.location.href = "index2.html";
+        } else {
+          document.getElementById("message").textContent =
+            "Wrong ah type pannatha!! Crt ah type pannu!!";
+        }
+
+        return false;
+      }
+    </script>
+  </head>
+  <body class="BackgroundImage">
+    <fieldset>
+      <legend>For you My Loveable sister!!</legend>
+      <div class="container">
+        <h1>Login</h1>
+        <form onsubmit="return validateInput()">
+          <input type="text" id="username" placeholder="Username" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" value="Login" />
+        </form>
+        <div id="message" class="message"></div>
+      </div>
+    </fieldset>
+  </body>
+</html>
